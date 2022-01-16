@@ -10,5 +10,7 @@
 /ERPM.Api/bin
 /ERPM.Api.Repository/bin
 /ERPM.Api.Services/bin
+/ERPM.Api.Model/bin
+/ERPM.Api.Model/obj
 /ERPM.Api/.vs/ERPM.Api/DesignTimeBuild
 /ERPM.Api/.vs/ERPM.Api
