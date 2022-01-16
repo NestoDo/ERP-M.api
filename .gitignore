@@ -3,3 +3,10 @@
 ################################################################################
 
 /ERPM.Api.Repository/obj
+/ERPM.Api.Services/obj
+/ERPM.Api/.vs/ERPM.Api/v17
+/ERPM.Api/obj
+/.vs
+/ERPM.Api/bin
+/ERPM.Api.Repository/bin
+/ERPM.Api.Services/bin
