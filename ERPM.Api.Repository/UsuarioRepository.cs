@@ -1,7 +1,11 @@
-﻿using ERPM.Api.Model;
+﻿using Dapper;
+using ERPM.Api.Model;
 using ERPM.Api.Repository.Interfaces;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +14,22 @@ namespace ERPM.Api.Repository
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        public async Task<Usuario> Obtener(int Id)
-        {
-            Usuario usuario = new Usuario() { Id = 1, Nombre = "Nombre", ApellidoPaterno = "AP", ApellidoMaterno = "AM" };
+        private readonly string _connectionString;
 
-            return usuario;
+        public UsuarioRepository(IConfiguration config)
+        {
+            _connectionString = config.GetConnectionString("ERPMApi");
+        }
+
+        public async Task<Usuario> Obtener(int id)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                return (Usuario)await db.QueryAsync<Usuario>(
+                    "ObtenerUsuario",
+                    new { id },
+                    commandType: CommandType.StoredProcedure);
+            }
         }
     }
 }
