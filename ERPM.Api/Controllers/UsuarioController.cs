@@ -17,12 +17,15 @@ namespace ERPM.Api.Controllers
             _usuarioService = usuarioService;
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<ResponseCall<Usuario>>> Obtener(int id)
         {
             Usuario usuario = await _usuarioService.Obtener(id);
 
-            ResponseCall<Usuario> response = new ResponseCall<Usuario>();
+            ResponseCall<Usuario> response = new ResponseCall<Usuario>()
+            {
+                response = usuario
+            };
 
             return Ok(response);
         }
