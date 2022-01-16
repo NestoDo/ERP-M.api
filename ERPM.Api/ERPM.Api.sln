@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPM.Api.Services", "..\ERP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPM.Api.Repository", "..\ERPM.Api.Repository\ERPM.Api.Repository.csproj", "{9521BEA6-D4C1-4EBB-8967-BB29C015C28A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERPM.Api.Model", "..\ERPM.Api.Model\ERPM.Api.Model.csproj", "{2F8A39E1-5958-4990-A90C-0322F3D45D63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9521BEA6-D4C1-4EBB-8967-BB29C015C28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9521BEA6-D4C1-4EBB-8967-BB29C015C28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9521BEA6-D4C1-4EBB-8967-BB29C015C28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8A39E1-5958-4990-A90C-0322F3D45D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8A39E1-5958-4990-A90C-0322F3D45D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8A39E1-5958-4990-A90C-0322F3D45D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8A39E1-5958-4990-A90C-0322F3D45D63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
