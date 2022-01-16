@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ERPM.Api.Model\ERPM.Api.Model.csproj" />
+    <ProjectReference Include="..\ERPM.Api.Services\ERPM.Api.Services.csproj" />
+  </ItemGroup>
+
 </Project>

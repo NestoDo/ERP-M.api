@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERPM.Api.Model
 {
-    public class Vendedor
+    public class Usuario
     {
         public int Id { get; set; }
 	    public string Nombre { get; set; } = String.Empty;

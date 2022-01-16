@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ERPM.Api.Model.Response
 {
-    public class Response<T>
+    public class ResponseCall<T>
     {
         public T? response { get; set; }
         public bool IsSuccess { get; set; } = true;

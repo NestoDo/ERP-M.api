@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ERPM.Api.Model\ERPM.Api.Model.csproj" />
+    <ProjectReference Include="..\ERPM.Api.Repository\ERPM.Api.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
