@@ -1,4 +1,5 @@
 ﻿using ERPM.Api.Model;
+using ERPM.Api.Model.Request;
 using ERPM.Api.Repository.Interfaces;
 using ERPM.Api.Services.Interfaces;
 using System;
@@ -22,14 +23,14 @@ namespace ERPM.Api.Services
             return _usuarioRepository.Obtener(id);
         }
 
-        public Task<Usuario> Agregar(Usuario usuario)
+        public Task<Usuario> Agregar(UsuarioRequest usuario)
         {
             return _usuarioRepository.Agregar(usuario);
         }
 
-        public Task<Usuario> Editar(Usuario usuario)
+        public Task<Usuario> Editar(UsuarioRequest usuario, int id)
         {
-            return _usuarioRepository.Editar(usuario);
+            return _usuarioRepository.Editar(usuario, id);
         }
     }
 }

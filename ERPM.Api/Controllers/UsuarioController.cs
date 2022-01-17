@@ -1,4 +1,5 @@
 ﻿using ERPM.Api.Model;
+using ERPM.Api.Model.Request;
 using ERPM.Api.Model.Response;
 using ERPM.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +32,7 @@ namespace ERPM.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ResponseCall<Usuario>>> Agregar([FromBody] Usuario usuario)
+        public async Task<ActionResult<ResponseCall<Usuario>>> Agregar([FromBody] UsuarioRequest usuario)
         {
             if (usuario == null)
             {
@@ -48,15 +49,15 @@ namespace ERPM.Api.Controllers
             return Ok(response);
         }
 
-        [HttpPut]
-        public async Task<ActionResult<ResponseCall<Usuario>>> Editar([FromBody] Usuario usuario)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ResponseCall<Usuario>>> Editar([FromBody] UsuarioRequest usuario, int id)
         {
             if (usuario == null)
             {
                 return BadRequest();
             }
 
-            Usuario usuarioResultado = await _usuarioService.Editar(usuario);
+            Usuario usuarioResultado = await _usuarioService.Editar(usuario, id);
 
             ResponseCall<Usuario> response = new ResponseCall<Usuario>()
             {

@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using ERPM.Api.Model;
+using ERPM.Api.Model.Request;
 using ERPM.Api.Repository.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -32,7 +33,7 @@ namespace ERPM.Api.Repository
             }
         }
 
-        public async Task<Usuario> Agregar(Usuario usuario)
+        public async Task<Usuario> Agregar(UsuarioRequest usuario)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
@@ -47,15 +48,15 @@ namespace ERPM.Api.Repository
             }
         }
 
-        public async Task<Usuario> Editar(Usuario usuario)
+        public async Task<Usuario> Editar(UsuarioRequest usuario, int id)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                return (Usuario)await db.QuerySingleAsync<Usuario>(
+                return (Usuario)await db.QueryFirstOrDefaultAsync<Usuario>(
                     "UsuarioEditar",
                     new
                     {
-                        usuario.Id,
+                        id,
                         usuario.Nombre,
                         usuario.ApellidoPaterno,
                         usuario.ApellidoMaterno
