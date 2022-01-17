@@ -14,3 +14,5 @@
 /ERPM.Api.Model/obj
 /ERPM.Api/.vs/ERPM.Api/DesignTimeBuild
 /ERPM.Api/.vs/ERPM.Api
+/ERPM.Api.Database/obj
+/ERPM.Api.Database/Import Schema Logs
