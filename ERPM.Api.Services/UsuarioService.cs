@@ -17,7 +17,7 @@ namespace ERPM.Api.Services
             _usuarioRepository = usuarioRepository;
         }
 
-        public Task<Usuario> Obtener(int id)
+        public Task<IEnumerable<Usuario>> Obtener(int id)
         {
             return _usuarioRepository.Obtener(id);
         }

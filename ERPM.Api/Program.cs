@@ -5,6 +5,7 @@ using ERPM.Api.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -17,6 +18,10 @@ builder.Services
     .AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 var app = builder.Build();
+
+// Configuration
+
+IConfiguration configuration = app.Configuration;
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

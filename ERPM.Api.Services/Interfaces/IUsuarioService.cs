@@ -9,6 +9,6 @@ namespace ERPM.Api.Services.Interfaces
 {
     public interface IUsuarioService
     {
-        Task<Usuario> Obtener(int id);
+        Task<IEnumerable<Usuario>> Obtener(int id);
     }
 }

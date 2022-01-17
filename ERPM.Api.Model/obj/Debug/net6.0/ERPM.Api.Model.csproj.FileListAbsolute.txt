@@ -9,3 +9,4 @@ C:\Users\omare\source\repos\NestoDo\ERP-M.api\ERPM.Api.Model\obj\Debug\net6.0\ER
 C:\Users\omare\source\repos\NestoDo\ERP-M.api\ERPM.Api.Model\obj\Debug\net6.0\ERPM.Api.Model.dll
 C:\Users\omare\source\repos\NestoDo\ERP-M.api\ERPM.Api.Model\obj\Debug\net6.0\ref\ERPM.Api.Model.dll
 C:\Users\omare\source\repos\NestoDo\ERP-M.api\ERPM.Api.Model\obj\Debug\net6.0\ERPM.Api.Model.pdb
+C:\Users\omare\source\repos\NestoDo\ERP-M.api\ERPM.Api.Model\obj\Debug\net6.0\ERPM.Api.Model.csproj.AssemblyReference.cache

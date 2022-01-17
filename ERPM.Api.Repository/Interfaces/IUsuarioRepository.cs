@@ -9,6 +9,6 @@ namespace ERPM.Api.Repository.Interfaces
 {
     public interface IUsuarioRepository
     {
-        public Task<Usuario> Obtener(int Id);
+        public Task<IEnumerable<Usuario>> Obtener(int Id);
     }
 }

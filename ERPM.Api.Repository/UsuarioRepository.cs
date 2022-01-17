@@ -21,11 +21,11 @@ namespace ERPM.Api.Repository
             _connectionString = config.GetConnectionString("ERPMApi");
         }
 
-        public async Task<Usuario> Obtener(int id)
+        public async Task<IEnumerable<Usuario>> Obtener(int id)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                return (Usuario)await db.QueryAsync<Usuario>(
+                return (IEnumerable<Usuario>)await db.QueryAsync<Usuario>(
                     "ObtenerUsuario",
                     new { id },
                     commandType: CommandType.StoredProcedure);
