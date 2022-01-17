@@ -10,5 +10,6 @@ namespace ERPM.Api.Repository.Interfaces
     public interface IUsuarioRepository
     {
         public Task<IEnumerable<Usuario>> Obtener(int Id);
+        public Task<Usuario> Agregar(Usuario usuario);
     }
 }

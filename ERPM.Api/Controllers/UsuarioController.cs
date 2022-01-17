@@ -29,5 +29,23 @@ namespace ERPM.Api.Controllers
 
             return Ok(response);
         }
+
+        [HttpPut]
+        public async Task<ActionResult<ResponseCall<Usuario>>> Agregar([FromBody] Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                return BadRequest();
+            }
+
+            Usuario usuarioCreado = await _usuarioService.Agregar(usuario);
+
+            ResponseCall<Usuario> response = new ResponseCall<Usuario>()
+            {
+                response = usuarioCreado
+            };
+
+            return Ok(response);
+        }
     }
 }

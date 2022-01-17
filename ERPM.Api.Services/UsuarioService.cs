@@ -21,5 +21,10 @@ namespace ERPM.Api.Services
         {
             return _usuarioRepository.Obtener(id);
         }
+
+        public Task<Usuario> Agregar(Usuario usuario)
+        {
+            return _usuarioRepository.Agregar(usuario);
+        }
     }
 }

@@ -26,8 +26,23 @@ namespace ERPM.Api.Repository
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
                 return (IEnumerable<Usuario>)await db.QueryAsync<Usuario>(
-                    "ObtenerUsuario",
+                    "UsuarioObtener",
                     new { id },
+                    commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public async Task<Usuario> Agregar(Usuario usuario)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                return (Usuario)await db.QuerySingleAsync<Usuario>(
+                    "UsuarioAgregar",
+                    new { 
+                        usuario.Nombre,
+                        usuario.ApellidoPaterno,
+                        usuario.ApellidoMaterno
+                    },
                     commandType: CommandType.StoredProcedure);
             }
         }
