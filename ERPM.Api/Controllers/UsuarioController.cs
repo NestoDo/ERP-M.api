@@ -30,7 +30,7 @@ namespace ERPM.Api.Controllers
             return Ok(response);
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<ActionResult<ResponseCall<Usuario>>> Agregar([FromBody] Usuario usuario)
         {
             if (usuario == null)
@@ -38,11 +38,29 @@ namespace ERPM.Api.Controllers
                 return BadRequest();
             }
 
-            Usuario usuarioCreado = await _usuarioService.Agregar(usuario);
+            Usuario usuarioResultado = await _usuarioService.Agregar(usuario);
 
             ResponseCall<Usuario> response = new ResponseCall<Usuario>()
             {
-                response = usuarioCreado
+                response = usuarioResultado
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<ResponseCall<Usuario>>> Editar([FromBody] Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                return BadRequest();
+            }
+
+            Usuario usuarioResultado = await _usuarioService.Editar(usuario);
+
+            ResponseCall<Usuario> response = new ResponseCall<Usuario>()
+            {
+                response = usuarioResultado
             };
 
             return Ok(response);

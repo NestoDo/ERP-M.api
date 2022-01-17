@@ -26,5 +26,10 @@ namespace ERPM.Api.Services
         {
             return _usuarioRepository.Agregar(usuario);
         }
+
+        public Task<Usuario> Editar(Usuario usuario)
+        {
+            return _usuarioRepository.Editar(usuario);
+        }
     }
 }

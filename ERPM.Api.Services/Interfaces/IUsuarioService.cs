@@ -11,5 +11,6 @@ namespace ERPM.Api.Services.Interfaces
     {
         Task<IEnumerable<Usuario>> Obtener(int id);
         Task<Usuario> Agregar(Usuario usuario);
+        Task<Usuario> Editar(Usuario usuario);
     }
 }

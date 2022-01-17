@@ -46,5 +46,22 @@ namespace ERPM.Api.Repository
                     commandType: CommandType.StoredProcedure);
             }
         }
+
+        public async Task<Usuario> Editar(Usuario usuario)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                return (Usuario)await db.QuerySingleAsync<Usuario>(
+                    "UsuarioEditar",
+                    new
+                    {
+                        usuario.Id,
+                        usuario.Nombre,
+                        usuario.ApellidoPaterno,
+                        usuario.ApellidoMaterno
+                    },
+                    commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
