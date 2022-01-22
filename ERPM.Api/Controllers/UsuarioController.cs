@@ -15,7 +15,7 @@ namespace ERPM.Api.Controllers
 
         public UsuarioController(IUsuarioService usuarioService)
         {
-            _usuarioService = usuarioService;
+            _usuarioService=usuarioService;
         }
 
         [HttpGet]
